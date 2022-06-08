@@ -7,7 +7,13 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - uses: actions/checkout@v3
-      - name: Login to github container registry
-        run: |
-          echo $GITHUB_TOKEN | docker login ghcr.io -u duduta --password-stdin
+      - 
+        name: Checkout
+        uses: actions/checkout@v3
+      - 
+        name: Login to github container registry
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
