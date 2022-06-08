@@ -7,8 +7,6 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      # I see it's @v3 already. How do I find out when it changes?
       - uses: actions/checkout@v3
 
       - name: Run a one-line script
