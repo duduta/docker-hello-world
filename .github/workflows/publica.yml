@@ -1,6 +1,6 @@
 name: publica
 
-on: [push]
+on: push
 
 jobs:
   incercam-cr:
@@ -8,9 +8,8 @@ jobs:
     
     steps:
       - uses: actions/checkout@v3
-
       - name: Run a one-line script
-       run: echo Right now the workflow is executing! :)
+        run: echo Right now the workflow is executing! :)
 
       - name: Build the buna-lume Docker image
         run: |
