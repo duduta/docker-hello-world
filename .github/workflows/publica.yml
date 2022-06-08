@@ -8,11 +8,6 @@ jobs:
     
     steps:
       - uses: actions/checkout@v3
-      - name: Run a one-line script
-        run: echo Right now the workflow is executing! :)
-
-      - name: Build the buna-lume Docker image
+      - name: Login to github container registry
         run: |
-          echo $CONTR_PAT | docker login ghcr.io -u duduta --password-stdin
-        env:
-          CONTR_PAT: ${{ secrets.CONTR_PAT }}
+          echo $GITHUB_TOKEN | docker login ghcr.io -u duduta --password-stdin
